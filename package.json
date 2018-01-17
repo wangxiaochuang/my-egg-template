@@ -14,6 +14,7 @@
     "node": "^8.9.4"
   },
   "devDependencies": {
-    "egg-bin": "^4.3.7"
+    "egg-bin": "^4.3.7",
+    "egg-development-proxyagent": "^1.0.0"
   }
 }

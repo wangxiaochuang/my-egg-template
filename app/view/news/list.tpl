@@ -6,9 +6,9 @@
 <body>
 <div class="news-view view">
     {% for item in list %}
-    <div class="item">
-        <a href="{{ item.url }}">{{ item.title }}</a>
-    </div>
+    <ul class="item">
+        <li><a href="{{ item.url }}">{{ item.title }}</a> <span>{{ helper.relativeTime(item.time) }}</span></li>
+    </ul>
     {% endfor %}
 </div>
 </body>
