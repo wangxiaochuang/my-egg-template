@@ -4,3 +4,9 @@ exports.robot = {
     /Baiduspider/i
   ]
 }
+
+exports.security = {
+  csrf: {
+    enable: false
+  }
+}

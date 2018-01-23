@@ -1,0 +1,30 @@
+const LocalStrategy = require('passport-local').Strategy
+
+module.exports = app => {
+  app.passport.use(new LocalStrategy({
+    passReqToCallback: true
+  }, function(req, username, password, done) {
+    const user = {
+      provider: 'local',
+      username,
+      password
+    }
+    console.log('############ 0')
+    app.passport.doVerify(req, user, done)
+  }
+  ));
+
+  app.passport.verify(async (ctx, user) => {
+    console.log('############ 1')
+    return user
+  })
+
+  app.passport.serializeUser(async (ctx, user) => {
+    console.log('############ 2')
+    return user
+  })
+  app.passport.deserializeUser(async (ctx, user) => {
+    console.log('############ 3')
+    return user
+  })
+}
